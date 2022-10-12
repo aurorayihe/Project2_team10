@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Chat extends Model {}
+class Movie extends Model {}
 
-Chat.init(
+Movie.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,16 +11,17 @@ Chat.init(
             primaryKey: true,
             autoIncrement: true,   
         },
-        name: {
+        title: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        user_id: {
+        directors: {
+            type: DataTypes.
+        },
+        bark_score: {
             type: DataTypes.INTEGER,
-            references: {
-                model: 'user',
-                key: 'id',
-            },
+            allowNull: false,
+
         },
     },
     {
