@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Reviews extends Model {}
+class Review extends Model {}
 
-Reviews.init(
+Review.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,43 +11,38 @@ Reviews.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
-      type: DataTypes.STRING,
+    user_id: {
+      type: DataTypes.INTEGER,
       allowNull: false,
-    },
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true,
+      references: {
+        model: 'user',
+        key: 'id'
       },
     },
-    password: {
+    movie_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'movie',
+        key: 'id'
+      }
+    },
+    comment: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [8],
-      },
     },
+    score: {
+      type: DataTypes.DECIMAL,
+      allowNull: false
+    }
   },
   {
-    hooks: {
-      beforeCreate: async (newUserData) => {
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        return newUserData;
-      },
-      beforeUpdate: async (updatedUserData) => {
-        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
-        return updatedUserData;
-      },
-    },
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',
+    modelName: 'review',
   }
 );
 
-module.exports = User;
+module.exports = Review;

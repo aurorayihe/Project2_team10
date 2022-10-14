@@ -15,13 +15,13 @@ Movie.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        directors: {
-            type: DataTypes.
+        cast_crew: {
+            type: DataTypes.STRING,
+            allowNull:false
         },
         bark_score: {
             type: DataTypes.INTEGER,
             allowNull: false,
-
         },
     },
     {
@@ -29,8 +29,8 @@ Movie.init(
       timestamps: false,
       freezeTableName: true,
       underscored: true,
-      modelName: 'project',
+      modelName: 'movie',
     }
 );
   
-module.exports = Chat;
+module.exports = Movie;
