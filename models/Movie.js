@@ -15,7 +15,11 @@ Movie.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        cast_crew: {
+        director: {
+            type: DataTypes.STRING,
+
+        },
+        cast: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -23,6 +27,10 @@ Movie.init(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
+        filename: {
+            type: DataTypes.STRING,
+            allowNull: false
+        }
     },
     {
       sequelize,

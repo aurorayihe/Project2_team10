@@ -5,7 +5,7 @@ class Review extends Model {}
 
 Review.init(
   {
-    id: {
+    review_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -16,7 +16,7 @@ Review.init(
       allowNull: false,
       references: {
         model: 'user',
-        key: 'id'
+        key: 'user_id'
       },
     },
     movie_id: {
@@ -24,7 +24,7 @@ Review.init(
       allowNull: false,
       references: {
         model: 'movie',
-        key: 'id'
+        key: 'movie_id'
       }
     },
     comment: {
