@@ -1,25 +1,47 @@
-<div class="card text-center log-in">
-        <div class="card-header login-header">
-            Sign Up 
+<h3 class="title has-text-centered is-size-4">Sign Up </h3>
+
+      <div class="card columns is-mobile signin">
+        <div class="card-content column is-three-fifths is-offset-one-fifth ">
+              <div class="field">
+                <label class="label">Username</label>
+                <div class="control has-icons-left has-icons-right">
+                  <input class="input" type="text" placeholder="Text input" value="bulma">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-user"></i>
+                  </span>
+                  <span class="icon is-small is-right">
+                    <i class="fas fa-check"></i>
+                  </span>
+                </div>
+                
+              </div>
+
+              <div class="field">
+                <label class="label">Password</label>
+                <p class="control has-icons-left">
+                  <input class="input" type="password" placeholder="Password">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                  </span>
+                </p>
+              </div>
+              
+              <div class="field">
+                <label class="label">Email</label>
+                <div class="control has-icons-left has-icons-right">
+                  <input class="input" type="email" placeholder="Email input" value="hello@">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-envelope"></i>
+                  </span>
+
+                </div>
+                
+              </div>
+              
+             <div class="field is-grouped">
+                <div class="control">
+                  <button class="button is-link">Submit</button>
+                </div>
+              </div>          
         </div>
-        <div class="mb-3 row email">
-            <label for="staticEmail" class="col-sm-2 col-form-label bold">Email</label>
-            <div class="col-sm-10">
-              <input type="text" class = 'form-control' id="staticEmail" value="email@example.com">
-            </div>
-          </div>
-          <div class="mb-3 row">
-            <label for="username" class="col-sm-2 col-form-label bold">Username</label>
-            <div class="col-sm-10">
-              <input type="text" class = 'form-control' id="username">
-            </div>
-          </div>
-          <div class="mb-3 row">
-            <label for="inputPassword" class="col-sm-2 col-form-label bold">Password</label>
-            <div class="col-sm-10">
-              <input type="password" class="form-control" id="inputPassword">
-            </div>
-          </div>
-          <div class="d-grid gap-2 col-6 mx-auto">
-            <button class="btn btn-primary signin-button" type="button">Sign Up</button>
-      </div>
+        </div>
