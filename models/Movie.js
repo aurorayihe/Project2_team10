@@ -1,35 +1,44 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Chat extends Model {}
+class Movie extends Model {}
 
-Chat.init(
+Movie.init(
     {
-        id: {
+        movie_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,   
         },
-        name: {
+        title: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        user_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'user',
-                key: 'id',
-            },
+        director: {
+            type: DataTypes.STRING,
+
         },
+        cast: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        bark_score: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        filename: {
+            type: DataTypes.STRING,
+            allowNull: false
+        }
     },
     {
       sequelize,
       timestamps: false,
       freezeTableName: true,
       underscored: true,
-      modelName: 'project',
+      modelName: 'movie',
     }
 );
   
-module.exports = Chat;
+module.exports = Movie;
