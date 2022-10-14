@@ -5,7 +5,7 @@ class Movie extends Model {}
 
 Movie.init(
     {
-        id: {
+        movie_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
@@ -17,7 +17,7 @@ Movie.init(
         },
         cast_crew: {
             type: DataTypes.STRING,
-            allowNull:false
+            allowNull: false
         },
         bark_score: {
             type: DataTypes.INTEGER,
