@@ -1,56 +1,57 @@
-body {
-    overflow: auto;
-}
-footer{
-  position:static;
- }
 
-body{
-    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);}
 
-.navbar{
-    background: rgb(2,0,36);
-background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(62,62,237,1) 67%, rgba(0,212,255,1) 100%);
-box-shadow: 5px 1px 3px 3px rgb(142, 142, 245);
+ .header-bg {
+    background-color: rgb(106, 40, 40);
+    height: 100px;
 }
 
-.brand {
-    font-size: 30px;
-    font-family: 'Silkscreen', cursive;
-    color: white;
-}
-
-.log-in {
-  width: 38rem;
-  position: absolute;
-  height: 330px;
-  z-index: 15;
-  top: 40%;
-  left: 40%;
-  margin: -100px 0 0 -150px;
-  background-image: linear-gradient(to top, #8dbaee 0%, #e7f0fd 100%);
-  box-shadow: 1px 3px 4px 4px rgb(52, 51, 86);
-}
-
-.email{
-    margin-top: 20px;
-}
-
-.user-login{
-    margin-top: 30px;
-}
-
-.bold{
+.logo{
+    color: rgba(255, 255, 255, 0.955);
+    font-size: 40px;
+    margin-top: 15px;
+    margin-left: 13px;
     font-weight: bold;
+    font-family: 'Poppins', sans-serif;
 }
 
-.login-header{
-    font-weight: 500;
+.option, .icon{
+    color: white;
     font-size: 20px;
 }
 
-.signin-button{
-    background-color: #3f91ef;
-    border-color: none;
+.menu{
+    margin-top: 60px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.menu-label{
+    font-size: 25px;
+    color: rgb(45, 38, 38);
+}
+
+.menu-list{
+    font-size: 18px;
+}
+
+.menu-list li {
+    margin-top: 20px;
+}
+
+.is-right-list{
+   float: right;
+}
+
+.signin{
+   margin-top: 40px;
+}
+
+.is-fullhd{
+   background-color: grey;
+   margin-top: 70px;
+}
+
+.copy{
+   color: white;
 }
 
