@@ -10,7 +10,7 @@ router.get('/', withAuth, async (req, res) => {
                 {
                     model: Review,
                     as: "reviews",
-                    attributes: ["id", "review_text", "user_name"],
+                    attributes: ["review_id", "user_id", "movie_id", "comment", "score"],
                 }
             ],
         });
@@ -24,14 +24,14 @@ router.get('/:id', withAuth, async (req, res) => {
     try {
         const movieData = await Movie.findOne({
             where: {
-                id: req.params.id
+                movie_id: req.params.movie_id
             },
-            attributes: ["movie_id", "title", "director", "cast"],
+            attributes: ["movie_id", "title", "director", "cast", "bark_score"],
             include: [
                 {
                     model: Review,
                     as: "reviews",
-                    attributes: ["id", "review_text", "user_name"],
+                    attributes: ["review_id", "user_id", "movie_id", "comment", "score"],
                 }
             ],
         });
@@ -62,7 +62,7 @@ router.put('/:id', withAuth, async (req, res) => {
         const movieData = await Movie.update(
             {
                 where: {
-                    id: req.params.id,
+                    movie_id: req.params.movie_id,
                 }
             },
             {
