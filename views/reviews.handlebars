@@ -1,0 +1,59 @@
+      <figure class="image is-128x128 review-image">
+        <img src="https://resizing.flixster.com/j4yykgWR3yX7yCZ1QuFsOk37OW4=/180x257/v2/https://flxt.tmsimg.com/assets/p20492187_b_v8_ah.jpg">
+        <p class="title-review">{{title}}</p>
+        <p class="description">{{director}}</p>
+        <p class="description">{{cast}}</p>
+      </figure>
+
+        <article class="media review">
+            <figure class="media-left">
+              <p class="image is-64x64">
+                <img src="/public/images/dog-avatar.webp">
+              </p>
+            </figure>
+            <div class="media-content">
+                <div class="content">
+                  <p>
+                    <strong>{{name}}</strong>
+                    <br>
+                    {{review_text}}
+                    <br>
+                  </p>
+                </div>
+
+            <div class="media-content">
+              <div class="field">
+                <p class="control">
+                  <textarea class="textarea" placeholder="Add a review..."></textarea>
+                </p>
+              </div>
+              <div class="control review-choice">
+                <label class="radio">
+                    <input type="radio" name="rsvp">
+                    <figure class="image is-64x64">
+                        <img src="/public/images/angrydog.jpg">
+                      </figure>
+                </label>
+                <label class="radio">
+                  <input type="radio" name="rsvp">
+                  <figure class="image is-64x64">
+                    <img src="/public/images/okdog.jpg">
+                  </figure>
+                </label>
+                <label class="radio">
+                  <input type="radio" name="rsvp">
+                  <figure class="image is-64x64">
+                    <img src="/public/images/happydog.jpg">
+                  </figure>
+
+                </label>
+              </div>
+              <nav class="level">
+                <div class="level-left">
+                  <div class="level-item">
+                    <a class="button is-info">Post Review</a>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </article>
