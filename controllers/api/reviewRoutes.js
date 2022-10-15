@@ -1,12 +1,20 @@
 const router = require('express').Router();
-const {Review} = require('../../models');
+const {Review, Movie} = require('../../models');
 const withAuth = require ('../../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
     try {
         const newReview = await Review.findAll({
-            ...req.body,
-            user_id: req.session.user_id,
+            attributes: ["review_id", "user_id", "movie_id", "comment", "score"],
+            include: [
+                {
+                    model: Movie,
+                    as: "movies",
+                    attributes: ["movie_id", "title", "director", "cast"],
+                }
+            ],
+            // ...req.body,
+            // user_id: req.session.user_id,
         });
 
         res.status(200).json(newReview);
@@ -20,7 +28,15 @@ router.get('/:id', withAuth, async (req, res) => {
         const newReview = await Review.getOne({
             where: {
                 id: req.params.id,
-            }
+            },
+            attributes: ["review_id", "user_id", "movie_id", "comment", "score"],
+            include: [
+                {
+                    model: Movie,
+                    as: "movies",
+                    attributes: ["movie_id", "title", "director", "cast"],
+                }
+            ],
         });
         
         if (!newReview) {

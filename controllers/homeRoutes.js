@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: Review,
-          attributes: ['name', 'review_text'],
+          attributes: ['review_id', 'movie_id', 'comment', 'score'],
         },
       ],
     });
@@ -26,7 +26,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET one gallery
+
 router.get('/movie/:id', async (req, res) => {
   try {
     const movieData = await Movie.findByPk(req.params.id, {
@@ -38,6 +38,8 @@ router.get('/movie/:id', async (req, res) => {
             'title',
             'director',
             'cast',
+            'bark_score',
+            'filename',
           ],
         },
       ],
@@ -51,7 +53,7 @@ router.get('/movie/:id', async (req, res) => {
   }
 });
 
-// GET one painting
+
 router.get('/review/:id', async (req, res) => {
   try {
     const reviewData = await Review.findByPk(req.params.id);
