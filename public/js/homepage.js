@@ -1,9 +1,11 @@
-const loginHandler = async (event) => {
+const loginRedirect = async (event) => {
     document.location.replace('/login')
 };
 
-const 
+const movieRedirect = async (event) => {
+    document.location.replace('/movie')
+}
 
 document
-    .querySelector()
-    .addEventListener('click', loginHandler);
+    .querySelector('#home-login')
+    .addEventListener('click', loginRedirect);

@@ -14,19 +14,32 @@
     <div class="tabs is-right is-boxed header-bg">
       <h1 class="logo">Maddy Doggy</h1>
         <ul>
-          <li class=“is-active”>
+          <li class="is-active" id="home-movie">
             <a>
               <span class="icon is-small"><i class="fas fa-film" aria-hidden=“true”></i></span>
               <span class="option">Movies</span>
             </a>
           </li>
-          <li>
-            <a>
-              <span class="icon is-small"><i class="fas fa-home" aria-hidden="true"></i></span>
-              <span class="option">Log In</span>
-            </a>
-          </li>
+          {{#if logged_in}}
+            <li id="home-logout">
+              <a href="/logout">
+                <span class="icon is-small"><i class="fas fa-home" aria-hidden="true"></i></span>
+                <span class="option">Log Out</span>
+              </a>
+            </li>
+          {{else}}
+            <li id="home-login">
+              <a href="/login">
+                <span class="icon is-small"><i class="fas fa-home" aria-hidden="true"></i></span>
+                <span class="option">Log In</span>
+              </a>
+            </li>
+          {{/if}}
         </ul>
+      </div>
+
+      <div>
+        {{{ body }}}
       </div>
 
 
@@ -37,8 +50,10 @@
                 <p><a href="https://www.freepik.com/free-vector/vector-angry-beagle_9176371.htm#query=mad%20dog&position=4&from_view=search&track=sph">Image by user10320847</a> on Freepik</p>
               </p>
             </div>
-          </footer>
-
+      </footer>
+      {{#if logged_in}}
+      <script src="../../public/js/logout.js"></script>
+      {{/if}}
   
 </body>
 </html>
