@@ -44,15 +44,28 @@ router.get('/movie/:id', async (req, res) => {
         },
       ],
     });
-
+    // Get all reviews of this movie
+    const reviewData = await Review.findAll({
+      where: {
+        movie_id: movieData.movie_id
+      },
+      include:[
+        {
+          model: Review,
+          attributes: [
+            'comment',
+            'score'
+          ]
+        }]
+    });
     const movie = movieData.get({ plain: true });
-    res.render('movie', { movie, loggedIn: req.session.loggedIn });
+    const reviews = reviewData.get({ plain:true });
+    res.render('movie', { movie, reviews, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
-
 
 router.get('/review/:id', async (req, res) => {
   try {
@@ -70,7 +83,7 @@ router.get('/profile', withAuth, async (req, res) => {
     try {
       const userData = await User.findByPk(req.session.user_id, {
         attributes: { exclude: ['password'] },
-        // include: [{ model:  }],
+        include: [{ model: Review }],
       });
       const user = userData.get({ plain: true });
       res.render('profile', {
@@ -81,7 +94,11 @@ router.get('/profile', withAuth, async (req, res) => {
       res.status(500).json(err);
     }
 });
-  
+
+router.get('/movies', async (req, res) => {
+  res.render('allmovie');
+})
+
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
       res.redirect('/profile');

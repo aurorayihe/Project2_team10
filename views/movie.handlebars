@@ -1,0 +1,24 @@
+<div class="text-center">
+  <h2>{{title}}</h2>
+  <p>Bark Score: {{bark_score}} {{{get_icon(bark_score)}}}</p>
+  <p>Director: {{director}}</p>
+  <p>Cast: {{ cast }}</p>
+  {{#if logged_in}}
+  <button id="add_review_btn">Add New Review</button>
+  {{/if}}
+  {{#each reviews as |review| }}
+    <div class="row mb-4">
+    <div class="col-md-5">
+        <h2>
+        Bark Score: {{review.bark_score}}
+        {{{get_icon(review.bark_score)}}} 
+        </h2>
+        <p>
+        {{review.comment}}
+        </p>
+    </div>
+    </div>
+  {{/each}}
+</div>
+
+<script src="../public/js/movie.js"
