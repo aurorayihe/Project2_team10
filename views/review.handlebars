@@ -1,6 +1,6 @@
       <figure class="image is-128x128 review-image">
         <img src="https://resizing.flixster.com/j4yykgWR3yX7yCZ1QuFsOk37OW4=/180x257/v2/https://flxt.tmsimg.com/assets/p20492187_b_v8_ah.jpg">
-        <p class="title-review">{{title}}</p>
+        <p class="title-review" id="movie_title">{{title}}</p>
         <p class="description">{{director}}</p>
         <p class="description">{{cast}}</p>
       </figure>
@@ -8,11 +8,10 @@
         <article class="media review">
             <figure class="media-left">
               <p class="image is-64x64">
-                <!-- Wondering if this should be associated with the score? 
-                Also wondering is we should use the {{each}} thing as it should render all comments for this movie-->
                 <img src="/public/images/dog-avatar.webp">
               </p>
             </figure>
+            <!--
             <div class="media-content">
                 <div class="content">
                   <p>
@@ -21,14 +20,10 @@
                     {{review_text}}
                     <br>
                   </p>
-                </div>
+                </div> 
 
             <div class="media-content">
-              <div class="field">
-                <p class="control">
-                  <textarea class="textarea" placeholder="Add a review..."></textarea>
-                </p>
-              </div>
+
               <div class="control review-choice">
                 <label class="radio">
                     <input type="radio" name="rsvp">
@@ -50,17 +45,25 @@
 
                 </label>
               </div>
-              <!-- added bark score here -->
-              <!-- Wondering if we need to choose between different icons? Supposed to have a score here-->
-              <!-- I changed them to hide before -->
+              -->
+              <div class="field">
+                <p class="control">
+                  <textarea class="textarea" placeholder="Add a review..." id="comment"></textarea>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control">
+                  <textarea class="textarea" placeholder="bark score" id="score"></textarea>
+                </p>
+              </div>
               <nav class="level">
                 <div class="level-left">
                   <div class="level-item">
-                    <a class="button is-info">Post Review</a>
+                    <button class="button is-info" id="new_review">Post Review</button>
                   </div>
                 </div>
               </nav>
             </div>
           </article>
 
-          <script src="../public/js/movie.js"></script>
+          <script src="../public/js/review.js"></script>

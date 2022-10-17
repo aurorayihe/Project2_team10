@@ -95,7 +95,7 @@ router.get('/profile', withAuth, async (req, res) => {
     }
 });
 
-router.get('/movie', async (req, res) => {
+router.get('/movies', async (req, res) => {
   res.render('allmovie');
 })
 
