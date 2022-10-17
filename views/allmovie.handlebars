@@ -1,0 +1,22 @@
+{{#each movies as |movie| }}
+<div class="row mb-4">
+  <div class="col-md-5">
+    <h2>
+      <a href="/movies/{{movie.movie_id}}">{{movie.title}}</a>
+    </h2>
+    <h2>
+      Bark Score: {{movie.bark_score}}
+      {{{get_icon(movie.bark_score)}}} 
+    </h2>
+    <p>
+      Director: {{movie.director}}
+    </p>
+    <p>
+      Cast: {{movie.cast}}
+    </p>
+  </div>
+  <div class="col-md-7">
+    <img src="../public/images/{{movie.filename}}">
+  </div>
+</div>
+{{/each}}

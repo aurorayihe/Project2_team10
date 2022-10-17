@@ -10,4 +10,4 @@ const logout = async () => {
     }
 };
 
-document.querySelector('#logout').addEventListener('click', logout);
+document.querySelector('#home_logout').addEventListener('click', logout);

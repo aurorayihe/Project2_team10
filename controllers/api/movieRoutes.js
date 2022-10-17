@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Movie, Review } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const movieData = await Movie.findAll({
             attributes: ["movie_id", "title", "director", "cast"],
@@ -20,7 +20,7 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
-router.get('/:id', withAuth, async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
         const movieData = await Movie.findOne({
             where: {
@@ -44,6 +44,8 @@ router.get('/:id', withAuth, async (req, res) => {
     }
 });
 
+// Maybe delete the delete, put, and post movie routes? Suppose movies are added by our database and users do not have the 
+// Authorization to alter movie list
 router.post('/', withAuth, async (req, res) => {
     try{
         const movieData = await Movie.create(req.body, {
@@ -56,6 +58,7 @@ router.post('/', withAuth, async (req, res) => {
         res.status(400).json(err);
     }
 });
+
 
 router.put('/:id', withAuth, async (req, res) => {
     try {

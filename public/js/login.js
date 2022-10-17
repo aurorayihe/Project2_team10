@@ -10,22 +10,13 @@ const loginHandler = async (event) => {
         headers: { 'Content-Type': 'application/json' },
       });
       if (response.ok) {
-        document.location.replace('/homepage');
+        document.location.replace('/main');
       } else {
         alert(response.statusText);
       }
     }
 };
 
-const directSignup = async (event) => {
-  document.location.replace('/signup')
-}
-
-
 document
     .querySelector('#login-submit-btn')
     .addEventListener('submit', loginHandler);
-
-document
-    .querySelector("signup-btn")
-    .addEventListener('click', directSignup);
