@@ -1,8 +1,8 @@
       <figure class="image is-128x128 review-image">
         <img src="https://resizing.flixster.com/j4yykgWR3yX7yCZ1QuFsOk37OW4=/180x257/v2/https://flxt.tmsimg.com/assets/p20492187_b_v8_ah.jpg">
-        <p class="title-review">{{title}}</p>
-        <p class="description">{{director}}</p>
-        <p class="description">{{cast}}</p>
+        <p class="title-review">{{movieData.title}}</p>
+        <p class="description">{{movieData.director}}</p>
+        <p class="description">{{movieData.cast}}</p>
       </figure>
 
         <article class="media review">
@@ -14,9 +14,9 @@
             <div class="media-content">
                 <div class="content">
                   <p>
-                    <strong>{{name}}</strong>
+                    <strong>{{reviewerData.name}}</strong>
                     <br>
-                    {{review_text}}
+                    {{reviewerData.review_text}}
                     <br>
                   </p>
                 </div>
@@ -57,3 +57,5 @@
               </nav>
             </div>
           </article>
+
+<script src="/public/js/movie.js"></script>

@@ -1,0 +1,20 @@
+ <h1 class="welcome-profile">Welcome {{reviewerData.name}}!</h1>
+
+      <h3 class="reviews-history">Reviews History </h3>
+      
+
+    <div class="tile is-ancestor has-text-centered">
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+                <p class="">{{{get_score}}}</p>
+                <p class="title is-size-5">{{movieData.title}}</p>
+                <p class="control">
+                    <button class="button is-danger">
+                      Delete post
+                    </button>
+                  </p>
+          </article>
+        </div>
+      </div>
+
+<script src="/public/js/profile.js"></script>
