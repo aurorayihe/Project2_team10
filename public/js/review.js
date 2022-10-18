@@ -6,7 +6,7 @@ const newReviewHandler = async (event) => {
     const comment = document.querySelector('#comment').value.trim();
 
     if (score && comment) {
-        const newReview = await fetch(`/api/review`, {
+        const newReview = await fetch(`/api/reviews`, {
             method: 'POST',
             body: JSON.stringify({score, comment}),
             headers: {
@@ -15,7 +15,7 @@ const newReviewHandler = async (event) => {
         });
 
         if(newReview.ok) {
-            document.location.replace('/review');
+            document.location.replace('/reviews');
         } else {
             alert('Failed to create review');
         }
