@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Movie, Review } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/allmovie', async (req, res) => {
     try {
         const movieData = await Movie.findAll({
             attributes: ["movie_id", "title", "director", "cast"],

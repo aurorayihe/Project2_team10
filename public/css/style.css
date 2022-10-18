@@ -1,6 +1,4 @@
-
-
- .header-bg {
+.header-bg {
     background-color: rgb(106, 40, 40);
     height: 100px;
 }
@@ -12,6 +10,7 @@
     margin-left: 13px;
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
+    text-shadow: 3px 4px rgb(126, 85, 85);
 }
 
 .option, .icon{

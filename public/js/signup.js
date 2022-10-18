@@ -10,13 +10,13 @@ const signupHandler = async (event) => {
         headers: { 'Content-Type': 'application/json' },
       });
       if (response.ok) {
-        document.location.replace('/main');
+        document.location.replace('/profile');
       } else {
         alert(response.statusText);
       }
     }
-};
-
-document
+  };
+  
+  document
     .querySelector('#signup_submit')
     .addEventListener('click', signupHandler);
