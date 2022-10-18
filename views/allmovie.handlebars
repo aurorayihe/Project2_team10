@@ -2,11 +2,15 @@
 <div class="column is-4-tablet is-3-desktop" id="all-movies">
   <div class="card">
     <div class="card-image has-text-centered px-6">
+      <br>
+      <p class="title is-size-5">{{title}}</p>
       <img src="./images/{{filename}}" alt="">
     </div>
     <div class="card-content">
-      <p>{{bark_score}}</p>
-      <p class="title is-size-5">{{title}}</p>
+      <p>Audience Bark Score: {{bark_score}}%</p>
+      <br>
+      <p class="title is-size-5">Director: {{director}}</p>
+      <p class="title is-size-5">Cast: {{cast}}</p>
     </div>
   <footer class="card-footer">
     <p class="card-footer-item">
