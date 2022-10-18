@@ -2,29 +2,25 @@ const { Review } = require('../models');
 
 const reviewData = [
     {
-      name: 'Gus',
-      email: 'gus@hotmail.com',
-      review_text: 'This movie is a fun watch!',
-      id: 1,
+      review_id: 1,
+      user_id: 1,
+      movie_id: 1, 
+      comment: 'This movie was amazing!',
+      score: 100,
     },
     {
-      name: 'Daisy',
-      email: 'Daisy@gmail.com',
-      review_text: 'My favorite movie!',
-      id: 2,
+      review_id: 2,
+      user_id: 2,
+      movie_id: 2, 
+      comment: 'This movie was terrible.',
+      score: 10,
     },
     {
-      name: 'Jenny',
-      email: 'Jenny@aol.com',
-      review_text: 'I did not like this movie.',
-      id: 3,
-
-    },
-    {
-        name: 'Kevin',
-        email: 'Kevin@yahoo.com',
-        review_text: 'This movie was alright.',
-        id: 4,
+      review_id: 3,
+      user_id: 3,
+      movie_id: 3, 
+      comment: 'This movie was fun to watch.',
+      score: 75,
     }
 ];
 
