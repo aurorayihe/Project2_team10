@@ -1,20 +1,10 @@
 
-{{!-- <script id="tweets-template" type="text/x-handlebars-template" >
-    {{#each_upto this 5}}
-         <p class="title is-size-5">{{this.movie_id}}</p>
-    {{/each_upto}}
-</script> --}}
-  {{!-- {{#each_upto this 4}}
-         <p class="title is-size-5">{{this.title}}</p>
-    {{/each_upto}} --}}
-
-
 <section class="session ">
     <div class="container">
         <h3 class="title has-text-centered is-size-4">Popular Movies </h3>
           <div class="columns mt-5 is-8 is-multiline is-mobile">
               {{!-- {{#each_upto movies as |movie| }} --}}
-               {{#each_upto movies 4 }}
+               {{#each_upto movies 0 4 }}
     
           <div class="column is-4-tablet is-3-desktop">
             <div class="card">
@@ -43,7 +33,7 @@
     BEST SERIES ON NETFLIX
   </p>
   <ul class="menu-list">
-    {{#each_upto movies 4}}
+    {{#each_upto movies 4 8}}
     <li>
         
       <a class="is-inline">{{title}}</a>
@@ -56,7 +46,7 @@
       POPULAR IN THEATERS
     </p>
     <ul class="menu-list">
-        {{#each_upto movies 4}}
+        {{#each_upto movies 8 12}}
       <li>
         <a class="is-inline">{{title}}</a>
         <p class="is-inline is-right-list">{{bark_score}}</p>
@@ -70,7 +60,7 @@
   <div class="container">
       <h3 class="title has-text-centered is-size-4">New Movies This Week </h3>
         <div class="columns mt-5 is-8 is-multiline is-mobile">
-            {{#each_upto movies 4}}
+            {{#each_upto movies 12 16}}
         <div class="column is-4-tablet is-3-desktop">
           <div class="card">
               <div class="card-image has-text-centered px-6">

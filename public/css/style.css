@@ -3,7 +3,7 @@
     height: 100px;
 }
 
-.logo{
+ .logo{
     color: rgba(255, 255, 255, 0.955);
     font-size: 40px;
     margin-top: 15px;
@@ -11,7 +11,7 @@
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
     text-shadow: 3px 4px rgb(126, 85, 85);
-}
+} 
 
 .option, .icon{
     color: white;
