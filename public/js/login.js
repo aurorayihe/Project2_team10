@@ -3,6 +3,8 @@ const loginHandler = async (event) => {
 
     const username = document.querySelector('#login_username').value.trim();
     const password = document.querySelector('#login_password').value.trim();
+    console.log(username);
+    console.log(password);
     if (username && password) {
       const response = await fetch('/api/users/login', {
         method: 'POST',
@@ -10,7 +12,7 @@ const loginHandler = async (event) => {
         headers: { 'Content-Type': 'application/json' },
       });
       if (response.ok) {
-        document.location.replace('/main');
+        document.location.replace('/profile');
       } else {
         alert(response.statusText);
       }
@@ -19,4 +21,4 @@ const loginHandler = async (event) => {
 
 document
     .querySelector('#login-submit-btn')
-    .addEventListener('submit', loginHandler);
+    .addEventListener('click', loginHandler);

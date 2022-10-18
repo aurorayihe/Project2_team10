@@ -1,15 +1,17 @@
 <section class="session">
     <div class="container">
         <h3 class="title has-text-centered is-size-4">Popular Movies </h3>
+        {{#each movies as |movie|}}
           <div class="columns mt-5 is-8 is-multiline is-mobile">
           <div class="column is-4-tablet is-3-desktop">
             <div class="card">
                 <div class="card-image has-text-centered px-6">
-                    <img src="https://resizing.flixster.com/j4yykgWR3yX7yCZ1QuFsOk37OW4=/180x257/v2/https://flxt.tmsimg.com/assets/p20492187_b_v8_ah.jpg" alt="">
+                    <img src="./images/{{filename}}" alt="">
                 </div>
                 <div class="card-content">
-                    <p>Rating</p>
+                    <p>{{get_icon 80}}</p>
                     <p class="title is-size-5">{{title}}</p>
+                    
                 </div>
                 <footer class="card-footer">
                     <p class="card-footer-item">
@@ -18,58 +20,8 @@
                 </footer>
             </div>
         </div>
-
-        <div class="column is-4-tablet is-3-desktop">
-          <div class="card">
-              <div class="card-image has-text-centered px-6">
-                  <img src="https://resizing.flixster.com/j4yykgWR3yX7yCZ1QuFsOk37OW4=/180x257/v2/https://flxt.tmsimg.com/assets/p20492187_b_v8_ah.jpg" alt="">
-              </div>
-              <div class="card-content">
-                  <p>Rating</p>
-                  <p class="title is-size-5">{{title}}</p>
-              </div>
-              <footer class="card-footer">
-                  <p class="card-footer-item">
-                      <a href="" class="has-text-grey">View</a>
-                  </p>
-              </footer>
-          </div>
-          </div>
-
-          <div class="column is-4-tablet is-3-desktop">
-              <div class="card">
-                  <div class="card-image has-text-centered px-6">
-                      <img src="https://resizing.flixster.com/j4yykgWR3yX7yCZ1QuFsOk37OW4=/180x257/v2/https://flxt.tmsimg.com/assets/p20492187_b_v8_ah.jpg" alt="">
-                  </div>
-                  <div class="card-content">
-                      <p>Rating</p>
-                      <p class="title is-size-5">{{title}}</p>
-                  </div>
-                  <footer class="card-footer">
-                      <p class="card-footer-item">
-                          <a href="" class="has-text-grey">View</a>
-                      </p>
-                  </footer>
-              </div>
-              </div>
-
-              <div class="column is-4-tablet is-3-desktop">
-                  <div class="card">
-                      <div class="card-image has-text-centered px-6">
-                          <img src="https://resizing.flixster.com/j4yykgWR3yX7yCZ1QuFsOk37OW4=/180x257/v2/https://flxt.tmsimg.com/assets/p20492187_b_v8_ah.jpg" alt="">
-                      </div>
-                      <div class="card-content">
-                          <p>Rating</p>
-                          <p class="title is-size-5">{{title}}</p>
-                      </div>
-                      <footer class="card-footer">
-                          <p class="card-footer-item">
-                              <a href="" class="has-text-grey">View</a>
-                          </p>
-                      </footer>
-                  </div>
-                  </div>
       </div>
+      {{/each}}
     </div>
 </section>
 
@@ -78,93 +30,25 @@
     BEST SERIES ON NETFLIX
   </p>
   <ul class="menu-list">
+    {{#each movies as |movie|}}
     <li>
+        
       <a class="is-inline">{{title}}</a>
-      <p class="is-inline is-right-list">ranking</p>
+      <p class="is-inline is-right-list">{{{get_icon}}}</p>
   </li>
-  <li>
-      <a class="is-inline">{{title}}</a>
-      <p class="is-inline is-right-list">ranking</p>
-  </li>
-  <li>
-      <a class="is-inline">{{title}}</a>
-      <p class="is-inline is-right-list">ranking</p>
-  </li>
-  <li>
-      <a class="is-inline">{{title}}</a>
-      <p class="is-inline is-right-list">ranking</p>
-  </li>
-  <li>
-      <a class="is-inline">{{title}}</a>
-      <p class="is-inline is-right-list">ranking</p>
-  </li>
-  <li>
-      <a class="is-inline">{{title}}</a>
-      <p class="is-inline is-right-list">ranking</p>
-  </li>
-  <li>
-      <a class="is-inline">{{title}}</a>
-      <p class="is-inline is-right-list">ranking</p>
-  </li>
-  <li>
-      <a class="is-inline">{{tile}}</a>
-      <p class="is-inline is-right-list">ranking</p>
-  </li>
-  <li>
-      <a class="is-inline">{{title}}</a>
-      <p class="is-inline is-right-list">ranking</p>
-  </li>
-  <li>
-      <a class="is-inline">{{title}}</a>
-      <p class="is-inline is-right-list">ranking</p>
-  </li>
+  {{/each}}
     
   </ul>
   <p class="menu-label">
       POPULAR IN THEATERS
     </p>
     <ul class="menu-list">
+        {{#each movies as |movie|}}
       <li>
         <a class="is-inline">{{title}}</a>
-        <p class="is-inline is-right-list">ranking</p>
+        <p class="is-inline is-right-list">{{{get_icon}}}</p>
     </li>
-    <li>
-        <a class="is-inline">{{title}}</a>
-        <p class="is-inline is-right-list">ranking</p>
-    </li>
-    <li>
-        <a class="is-inline">{{title}}</a>
-        <p class="is-inline is-right-list">ranking</p>
-    </li>
-    <li>
-        <a class="is-inline">{{title}}</a>
-        <p class="is-inline is-right-list">ranking</p>
-    </li>
-    <li>
-        <a class="is-inline">{{title}}</a>
-        <p class="is-inline is-right-list">ranking</p>
-    </li>
-    <li>
-        <a class="is-inline">{{title}}</a>
-        <p class="is-inline is-right-list">ranking</p>
-    </li>
-    <li>
-        <a class="is-inline">{{title}}</a>
-        <p class="is-inline is-right-list">ranking</p>
-    </li>
-    <li>
-        <a class="is-inline">{{title}}</a>
-        <p class="is-inline is-right-list">ranking</p>
-    </li>
-    <li>
-        <a class="is-inline">{{title}}</a>
-        <p class="is-inline is-right-list">ranking</p>
-    </li>
-    <li>
-        <a class="is-inline">{{title}}</a>
-        <p class="is-inline is-right-list">ranking</p>
-    </li>
-      
+            {{/each}}
     </ul>
     
 </aside>
@@ -172,14 +56,15 @@
 <section class="session scrolling-wrapper">
   <div class="container">
       <h3 class="title has-text-centered is-size-4">New Movies This Week </h3>
+      {{#each movies as |movie|}}
         <div class="columns mt-5 is-8 is-multiline is-mobile">
         <div class="column is-4-tablet is-3-desktop">
           <div class="card">
               <div class="card-image has-text-centered px-6">
-                  <img src="https://resizing.flixster.com/j4yykgWR3yX7yCZ1QuFsOk37OW4=/180x257/v2/https://flxt.tmsimg.com/assets/p20492187_b_v8_ah.jpg" alt="">
+                  <img src="./images/{{filename}}" alt="">
               </div>
               <div class="card-content">
-                  <p>Rating</p>
+                  <p>{{{get_icon}}}</p>
                   <p class="title is-size-5">{{title}}</p>
               </div>
               <footer class="card-footer">
@@ -189,54 +74,6 @@
               </footer>
           </div>
       </div>
-
-      <div class="column is-4-tablet is-3-desktop">
-          <div class="card">
-              <div class="card-image has-text-centered px-6">
-                  <img src="https://resizing.flixster.com/j4yykgWR3yX7yCZ1QuFsOk37OW4=/180x257/v2/https://flxt.tmsimg.com/assets/p20492187_b_v8_ah.jpg" alt="">
-              </div>
-              <div class="card-content">
-                  <p>Rating</p>
-                  <p class="title is-size-5">{{title}}</p>
-              </div>
-              <footer class="card-footer">
-                  <p class="card-footer-item">
-                      <a href="" class="has-text-grey">View</a>
-                  </p>
-              </footer>
-          </div>
-      </div>
-
-      <div class="column is-4-tablet is-3-desktop">
-          <div class="card">
-              <div class="card-image has-text-centered px-6">
-                  <img src="https://resizing.flixster.com/j4yykgWR3yX7yCZ1QuFsOk37OW4=/180x257/v2/https://flxt.tmsimg.com/assets/p20492187_b_v8_ah.jpg" alt="">
-              </div>
-              <div class="card-content">
-                  <p>Rating</p>
-                  <p class="title is-size-5">{{title}}</p>
-              </div>
-              <footer class="card-footer">
-                  <p class="card-footer-item">
-                      <a href="" class="has-text-grey">View</a>
-                  </p>
-              </footer>
-          </div>
-      </div>
-
-      <div class="column is-4-tablet is-3-desktop">
-          <div class="card">
-              <div class="card-image has-text-centered px-6">
-                  <img src="https://resizing.flixster.com/j4yykgWR3yX7yCZ1QuFsOk37OW4=/180x257/v2/https://flxt.tmsimg.com/assets/p20492187_b_v8_ah.jpg" alt="">
-              </div>
-              <div class="card-content">
-                  <p>Rating</p>
-                  <p class="title is-size-5">{{title}}</p>
-              </div>
-              <footer class="card-footer">
-                  <p class="card-footer-item">
-                      <a href="" class="has-text-grey">View</a>
-                  </p>
-              </footer>
+      {{/each}}
           </div>
       </div>

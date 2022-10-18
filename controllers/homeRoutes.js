@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Movie, Review } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const movieData = await Movie.findAll({
       include: [
@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
     );
     res.render('homepage', {
       movies,
-      loggedIn: req.session.loggedIn,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     console.log(err);
@@ -95,9 +95,30 @@ router.get('/profile', withAuth, async (req, res) => {
     }
 });
 
-router.get('/movies', async (req, res) => {
-  res.render('allmovie');
-})
+router.get('/allmovie', async (req, res) => {
+  try {
+    const movieData = await Movie.findAll({
+      include: [
+        {
+          model: Review,
+          attributes: ['review_id', 'movie_id', 'comment', 'score'],
+        },
+      ],
+    });
+
+    const movies = movieData.map((movie) =>
+      movie.get({ plain: true })
+    );
+    res.render('allmovie', {
+      movies,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
@@ -105,6 +126,10 @@ router.get('/login', (req, res) => {
       return;
     }
     res.render('login');
+});
+
+router.get('/signup', (req, res) => {
+  res.render('signup');
 });
   
 

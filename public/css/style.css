@@ -1,6 +1,4 @@
-
-
- .header-bg {
+.header-bg {
     background-color: rgb(106, 40, 40);
     height: 100px;
 }
@@ -12,6 +10,7 @@
     margin-left: 13px;
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
+    text-shadow: 3px 4px rgb(126, 85, 85);
 }
 
 .option, .icon{
@@ -53,5 +52,33 @@
 
 .copy{
    color: white;
+}
+
+.welcome-profile{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(126, 85, 85);
+    text-shadow: 2px 3px  rgb(246, 208, 208);
+}
+
+.reviews-history{
+    font-size: 25px;
+    text-align: center;
+    margin-top: 30px;
+    color: rgb(106, 40, 40);
+    margin-bottom: 30px;
+  
+
+}
+
+.right{
+    margin-left: 400px;
+}
+
+ion-icon{
+    color: white; 
+    font-size: 27px;
 }
 

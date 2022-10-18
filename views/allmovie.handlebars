@@ -1,22 +1,19 @@
-{{#each movies as |movie| }}
-<div class="row mb-4">
-  <div class="col-md-5">
-    <h2>
-      <a href="/movies/{{movie.movie_id}}">{{movie.title}}</a>
-    </h2>
-    <h2>
-      Bark Score: {{movie.bark_score}}
-      {{{get_icon(movie.bark_score)}}} 
-    </h2>
-    <p>
-      Director: {{movie.director}}
+{{#each movies as |movie|}}
+<div class="column is-4-tablet is-3-desktop" id="all-movies">
+  <div class="card">
+    <div class="card-image has-text-centered px-6">
+      <img src="./images/{{filename}}" alt="">
+    </div>
+    <div class="card-content">
+      <p>{{bark_score}}</p>
+      <p class="title is-size-5">{{title}}</p>
+    </div>
+  <footer class="card-footer">
+    <p class="card-footer-item">
+      <a href="" class="has-text-grey">View</a>
     </p>
-    <p>
-      Cast: {{movie.cast}}
-    </p>
-  </div>
-  <div class="col-md-7">
-    <img src="../public/images/{{movie.filename}}">
+  </footer>
   </div>
 </div>
 {{/each}}
+
