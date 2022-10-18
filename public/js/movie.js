@@ -1,5 +1,5 @@
 const redirectAddReview = async (event) => {
-    document.location.replace('/review');
+    document.location.replace('/reviews');
 }
 
 document
