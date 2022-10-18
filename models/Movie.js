@@ -17,7 +17,7 @@ Movie.init(
         },
         director: {
             type: DataTypes.STRING,
-
+            allowNull: false,
         },
         cast: {
             type: DataTypes.STRING,
