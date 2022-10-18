@@ -1,18 +1,30 @@
-<section class="session">
+
+{{!-- <script id="tweets-template" type="text/x-handlebars-template" >
+    {{#each_upto this 5}}
+         <p class="title is-size-5">{{this.movie_id}}</p>
+    {{/each_upto}}
+</script> --}}
+  {{!-- {{#each_upto this 4}}
+         <p class="title is-size-5">{{this.title}}</p>
+    {{/each_upto}} --}}
+
+
+<section class="session ">
     <div class="container">
         <h3 class="title has-text-centered is-size-4">Popular Movies </h3>
-        {{#each movies as |movie|}}
           <div class="columns mt-5 is-8 is-multiline is-mobile">
+              {{!-- {{#each_upto movies as |movie| }} --}}
+               {{#each_upto movies 4 }}
+    
           <div class="column is-4-tablet is-3-desktop">
             <div class="card">
                 <div class="card-image has-text-centered px-6">
                     <img src="./images/{{filename}}" alt="">
                 </div>
                 <div class="card-content">
-                    <p>{{get_icon 80}}</p>
+                    <p>{{bark_score}}</p>
                     <p class="title is-size-5">{{title}}</p>
-                    
-                </div>
+                    </div>
                 <footer class="card-footer">
                     <p class="card-footer-item">
                         <a href="" class="has-text-grey">View</a>
@@ -20,35 +32,36 @@
                 </footer>
             </div>
         </div>
+
+         {{/each_upto}}
       </div>
-      {{/each}}
     </div>
-</section>
+</section> 
 
 <aside class="menu">
   <p class="menu-label">
     BEST SERIES ON NETFLIX
   </p>
   <ul class="menu-list">
-    {{#each movies as |movie|}}
+    {{#each_upto movies 4}}
     <li>
         
       <a class="is-inline">{{title}}</a>
-      <p class="is-inline is-right-list">{{{get_icon}}}</p>
+      <p class="is-inline is-right-list">{{bark_score}}</p>
   </li>
-  {{/each}}
+  {{/each_upto}}
     
   </ul>
   <p class="menu-label">
       POPULAR IN THEATERS
     </p>
     <ul class="menu-list">
-        {{#each movies as |movie|}}
+        {{#each_upto movies 4}}
       <li>
         <a class="is-inline">{{title}}</a>
-        <p class="is-inline is-right-list">{{{get_icon}}}</p>
+        <p class="is-inline is-right-list">{{bark_score}}</p>
     </li>
-            {{/each}}
+            {{/each_upto}}
     </ul>
     
 </aside>
@@ -56,15 +69,15 @@
 <section class="session scrolling-wrapper">
   <div class="container">
       <h3 class="title has-text-centered is-size-4">New Movies This Week </h3>
-      {{#each movies as |movie|}}
         <div class="columns mt-5 is-8 is-multiline is-mobile">
+            {{#each_upto movies 4}}
         <div class="column is-4-tablet is-3-desktop">
           <div class="card">
               <div class="card-image has-text-centered px-6">
                   <img src="./images/{{filename}}" alt="">
               </div>
               <div class="card-content">
-                  <p>{{{get_icon}}}</p>
+                  <p>{{bark_score}}</p>
                   <p class="title is-size-5">{{title}}</p>
               </div>
               <footer class="card-footer">
@@ -74,6 +87,6 @@
               </footer>
           </div>
       </div>
-      {{/each}}
+ {{/each_upto}}
           </div>
       </div>

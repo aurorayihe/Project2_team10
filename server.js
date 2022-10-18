@@ -2,8 +2,10 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
+const Handlebars = require('handlebars');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const routes = require('./controllers');
+//const movie = require('./seeds/movieSeeds')
 const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
@@ -13,6 +15,20 @@ const app = express();
 const PORT = 3001 || process.env.PORT;
 
 const hbs = exphbs.create({ helpers });
+
+// Handlebars.registerHelper('limit', function (arr, limit) {
+//   if (!Array.isArray(arr)) { return []; }
+//   return arr.slice(0, limit);
+// });
+Handlebars.registerHelper('each_upto', function(ary, max, options) {
+  if(!ary || ary.length == 0)
+      return options.inverse(this);
+
+  var result = '';
+  for(var i = 0; i < max && i < ary.length; ++i)
+      result += options.fn(ary[i]);
+  return result;
+});
 
 const sess = {
     secret: 'This is my secret',
