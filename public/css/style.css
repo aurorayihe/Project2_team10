@@ -74,9 +74,12 @@
 
 }
 
-
-
 .right{
     margin-left: 400px;
+}
+
+ion-icon{
+    color: white; 
+    font-size: 27px;
 }
 

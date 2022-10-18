@@ -1,4 +1,4 @@
-{{#each movies as |movie| }}
+{{!-- {{#each movies as |movie| }}
 <div class="row mb-4">
   <div class="col-md-5">
     <h2>
@@ -19,4 +19,21 @@
     <img src="../public/images/{{movie.filename}}">
   </div>
 </div>
-{{/each}}
+{{/each}} --}}
+{{#each movies as |movie|}}
+<div class="column is-4-tablet is-3-desktop">
+  <div class="card">
+    <div class="card-image has-text-centered px-6">
+      <img src="https://resizing.flixster.com/j4yykgWR3yX7yCZ1QuFsOk37OW4=/180x257/v2/https://flxt.tmsimg.com/assets/p20492187_b_v8_ah.jpg" alt="">
+    </div>
+    <div class="card-content">
+      <p>Rating</p>
+      <p class="title is-size-5">Title of the movie</p>
+    </div>
+  <footer class="card-footer">
+    <p class="card-footer-item">
+      <a href="" class="has-text-grey">View</a>
+    </p>
+  </footer>
+  </div>
+</div>
