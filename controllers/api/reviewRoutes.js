@@ -52,10 +52,12 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', withAuth, async (req, res) => {
     try {
+        console.log(req.body);
         const newReview = await Review.create({
+            // ...req.body,
             comment: req.body.comment,
             score: req.body.score,
-            user_id: req.session.user_id,
+            // user_id: req.session.user_id,
         });  
         res.status(200).json(newReview);
     } catch (err) {

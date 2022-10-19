@@ -30,8 +30,6 @@ router.get('/', withAuth, async (req, res) => {
 router.get('/movie/:id', async (req, res) => {
   try {
     const movieData = await Movie.findByPk(req.params.id);
-    // Get all reviews of this movie
-    console.log("get method called!")
     const movie = movieData.get({ plain: true });
     const reviewData = await Review.findAll({
       where: {
@@ -39,6 +37,10 @@ router.get('/movie/:id', async (req, res) => {
       },
     });
     const reviews = reviewData.map((ref) => ref.get({ plain: true }));
+    
+    req.session.save(() => {
+      req.session.movie_id = movieData.movie_id;});
+
     res.render('movie', { movie, reviews, logged_in: req.session.logged_in });
   } catch (err) {
     console.log(err);
@@ -72,19 +74,18 @@ router.get('/profile', withAuth, async (req, res) => {
   try {
     const userData = await User.findAll({
       where: {
-        user_id:1,
+        user_id: req.session.user_id,
       }
     });
     const user = userData.map((ref) => ref.get({ plain: true }));
-    console.log(user);
+    console.log(req.session);
 
     const reviewData = await Review.findAll({
       where: {
-        user_id: 1,
+        user_id: req.session.user_id,
       },
     });
     const reviews = reviewData.map((ref) => ref.get({ plain: true }));
-    console.log("are you here?");
     res.render('profile', { ...user, reviews, logged_in: true });
   } catch (err) {
     res.status(500).json(err);
