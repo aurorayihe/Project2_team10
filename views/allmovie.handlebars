@@ -1,5 +1,6 @@
-{{#each movies as |movie|}}
+{{!-- 
 <div class="column is-4-tablet is-3-desktop" id="all-movies">
+  {{#each movies as |movie|}}
   <div class="card">
     <div class="card-image has-text-centered px-6">
       <br>
@@ -18,6 +19,37 @@
     </p>
   </footer>
   </div>
-</div>
-{{/each}}
+  {{/each}}
+</div> --}}
 
+<section class="session ">
+    <div class="container">
+          <div class="columns mt-5 is-8 is-multiline is-mobile">
+              {{!-- {{#each_upto moies as |movie| }} --}}
+               {{#each movies as |movies|}}
+    
+          <div class="column is-4-tablet is-3-desktop">
+            <div class="card">
+                <div class="card-image has-text-centered px-6">
+                  <br>
+            <p class="title is-size-5">{{title}}</p>
+                    <img src="./images/{{filename}}" alt="">
+                </div>
+                <div class="card-content">
+          <p>Audience Bark Score: {{bark_score}}%</p>
+      <br>
+      <p class="title is-size-5">Director: {{director}}</p>
+      <p class="title is-size-5">Cast: {{cast}}</p>
+                    </div>
+                <footer class="card-footer">
+                    <p class="card-footer-item">
+                        <a href="" class="has-text-grey">View</a>
+                    </p>
+                </footer>
+            </div>
+        </div>
+
+         {{/each}}
+      </div>
+    </div>
+</section> 

@@ -8,7 +8,7 @@ const movieData = [
         movie_id: 1,
         bark_score: 95,
         filename: '01-The-Godfather.jpg',
-
+        
     },
     {
         title: 'Star Wars: Epsiode IV A New Hope',
@@ -17,6 +17,7 @@ const movieData = [
         movie_id: 2,
         bark_score: 98,
         filename: '02-Star-Wars-ANH.jpg',
+     
     },
     {
         title: 'The Curious Case of Benjamin Button',
@@ -25,6 +26,7 @@ const movieData = [
         movie_id: 3,
         bark_score: 100,
         filename: '03-A-Curious-Case-of-Benjamin-Button.jpg',
+    
     },
     {
         title: 'The Wolf of Wall Street',
@@ -33,6 +35,7 @@ const movieData = [
         movie_id: 4,
         bark_score: 96,
         filename: '04-Wolf-of-Wallstreet.jpg',
+
     },
     {
         title: 'Catch Me If You Can',
@@ -82,6 +85,47 @@ const movieData = [
         bark_score: 92,
         filename: '10-Ford-V-Ferrari.jpg',
     },
+     {
+       title: 'Minions: The Rise of Gru',
+        director:'Kyle Balda',
+        cast:'Steve Carell, Taraji P. Henson, Michelle Yeoh',
+        movie_id: 11,
+        bark_score: 80,
+        filename: 'minions-the-rise-of-gru.jpeg',
+     },
+     {
+        title: 'Lupin',
+         director:'George Kay',
+         cast:'Omar Sy, Ludivine Sagnier, Clotilde Hesme',
+         movie_id: 12,
+         bark_score: 78,
+         filename: 'lupin.jpg',
+      },
+      {
+        title: 'Thor: Love and Thunder',
+         director:'Taika Waititi',
+         cast:'Chris Hemsworth, Natalie Portman, Christian Bale',
+         movie_id: 13,
+         bark_score: 77,
+         filename: 'thor.jpg',
+      },
+      {
+        title: 'DC League of Super-Pets',
+         director:'Jared Stern',
+         cast:'Dwayne Johnson, Kevin Hart, Kate McKinnon',
+         movie_id: 14,
+         bark_score: 78,
+         filename: 'super-pets.jpeg',
+      },
+      {
+        title: 'Avatar',
+         director:'James Cameron',
+         cast:'Sam Worthington, Zoe Saldana, Sigourney Weaver',
+         movie_id: 15,
+         bark_score: 82,
+         filename: 'avatar.jpeg',
+      },
+      
 ];
 
 const seedMovies = () => Movie.bulkCreate(movieData);
