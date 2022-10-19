@@ -29,50 +29,41 @@ router.get('/', withAuth, async (req, res) => {
 
 router.get('/movie/:id', async (req, res) => {
   try {
-    const movieData = await Movie.findByPk(req.params.id, {
-      include: [
-        {
-          model: Movie,
-          attributes: [
-            'movie_id',
-            'title',
-            'director',
-            'cast',
-            'bark_score',
-            'filename',
-          ],
-        },
-      ],
-    });
-    // Get all reviews of this movie
+    const movieData = await Movie.findByPk(req.params.id);
+    const movie = movieData.get({ plain: true });
     const reviewData = await Review.findAll({
       where: {
-        movie_id: movieData.movie_id
+        movie_id: req.params.id
       },
-      include:[
-        {
-          model: Review,
-          attributes: [
-            'comment',
-            'score'
-          ]
-        }]
     });
-    const movie = movieData.get({ plain: true });
-    const reviews = reviewData.get({ plain:true });
-    res.render('movie', { movie, reviews, loggedIn: req.session.loggedIn });
+    const reviews = reviewData.map((ref) => ref.get({ plain: true }));
+    
+    req.session.save(() => {
+      req.session.movie_id = movieData.movie_id;});
+
+    res.render('movie', { movie, reviews, logged_in: req.session.logged_in });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
+// router.get('/movie/:id'), async (req, res) => {
+//   try {
+//     const movieData = await Movie.findByPk(req.params.id);
+//     const thismovie = movieData.get({ plain: true});
+//     res.render('movie', {thismovie, logged_in: req.session.logged_in});
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// };
 
 router.get('/review/:id', async (req, res) => {
   try {
     const reviewData = await Review.findByPk(req.params.id);
 
     const review = reviewData.get({ plain: true });
-    res.render('review', { review, loggedIn: req.session.loggedIn });
+    res.render('review', { review, logged_in: req.session.logged_in });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -80,19 +71,38 @@ router.get('/review/:id', async (req, res) => {
 });
 
 router.get('/profile', withAuth, async (req, res) => {
-    try {
-      const userData = await User.findByPk(req.session.user_id, {
-        attributes: { exclude: ['password'] },
-        include: [{ model: Review }],
-      });
-      const user = userData.get({ plain: true });
-      res.render('profile', {
-        ...user,
-        logged_in: true
-      });
-    } catch (err) {
-      res.status(500).json(err);
-    }
+  try {
+    const userData = await User.findAll({
+      where: {
+        user_id: req.session.user_id,
+      }
+    });
+    const user = userData.map((ref) => ref.get({ plain: true }));
+    console.log(req.session);
+
+    const reviewData = await Review.findAll({
+      where: {
+        user_id: req.session.user_id,
+      },
+    });
+    const reviews = reviewData.map((ref) => ref.get({ plain: true }));
+    res.render('profile', { ...user, reviews, logged_in: true });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+    // try {
+    //   const userData = await User.findByPk(req.session.user_id, {
+    //     attributes: { exclude: ['password'] },
+    //     include: [{ model: Review }],
+    //   });
+    //   const user = userData.get({ plain: true });
+    //   res.render('profile', {
+    //     ...user,
+    //     logged_in: true
+    //   });
+    // } catch (err) {
+    //   res.status(500).json(err);
+    // }
 });
 
 router.get('/allmovie', async (req, res) => {
@@ -111,7 +121,7 @@ router.get('/allmovie', async (req, res) => {
     );
     res.render('allmovie', {
       movies,
-      loggedIn: req.session.loggedIn,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     console.log(err);
@@ -119,6 +129,9 @@ router.get('/allmovie', async (req, res) => {
   }
 });
 
+router.get('/review', (req, res) => {
+  res.render('review');
+})
 
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
