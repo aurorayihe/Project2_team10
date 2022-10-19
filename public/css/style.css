@@ -1,9 +1,14 @@
+body{
+    background-image: url('/images/html-background-dog.jpg');
+    background-size: contain;
+}
+
 .header-bg {
-    background-color: rgb(106, 40, 40);
+    background-color: rgb(152, 211, 219);
     height: 100px;
 }
 
- .logo{
+.logo{
     color: rgba(255, 255, 255, 0.955);
     font-size: 40px;
     margin-top: 15px;
@@ -12,6 +17,7 @@
     font-family: 'Poppins', sans-serif;
     text-shadow: 3px 4px rgb(126, 85, 85);
 } 
+
 
 .option, .icon{
     color: white;
@@ -39,6 +45,10 @@
 
 .is-right-list{
    float: right;
+}
+
+.list{
+    color:rgb(190, 240, 240);
 }
 
 .signin{
@@ -82,3 +92,12 @@ ion-icon{
     font-size: 27px;
 }
 
+.card {
+    background-color: rgb(188, 228, 234);
+}
+
+.popular-movies{
+    color: white;
+    text-shadow: 2px 2px rgb(3, 44, 78);
+    font-size: 25px;
+}

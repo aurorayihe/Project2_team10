@@ -1,18 +1,18 @@
 
 <section class="session ">
     <div class="container">
-        <h3 class="title has-text-centered is-size-4">Popular Movies </h3>
+        <h3 class="title has-text-centered is-size-4 popular-movies">Popular Movies </h3>
           <div class="columns mt-5 is-8 is-multiline is-mobile">
               {{!-- {{#each_upto movies as |movie| }} --}}
                {{#each_upto movies 0 4 }}
     
           <div class="column is-4-tablet is-3-desktop">
             <div class="card">
-                <div class="card-image has-text-centered px-6">
+                <div class="card-image has-text-centered px-6 image-space">
                     <img src="./images/{{filename}}" alt="">
                 </div>
                 <div class="card-content">
-                    <p>{{bark_score}}</p>
+                    <p>Audience Bark Score: {{bark_score}}%</p>
                     <p class="title is-size-5">{{title}}</p>
                     </div>
                 <footer class="card-footer">
@@ -29,27 +29,27 @@
 </section> 
 
 <aside class="menu">
-  <p class="menu-label">
+  <p class="menu-label popular-movies">
     BEST SERIES ON NETFLIX
   </p>
   <ul class="menu-list">
     {{#each_upto movies 4 8}}
     <li>
         
-      <a class="is-inline">{{title}}</a>
-      <p class="is-inline is-right-list">{{bark_score}}</p>
+      <a class="is-inline list">{{title}}</a>
+      <p class="is-inline is-right-list list">{{bark_score}}</p>
   </li>
   {{/each_upto}}
     
   </ul>
-  <p class="menu-label">
+  <p class="menu-label popular-movies">
       POPULAR IN THEATERS
     </p>
     <ul class="menu-list">
         {{#each_upto movies 8 12}}
       <li>
-        <a class="is-inline">{{title}}</a>
-        <p class="is-inline is-right-list">{{bark_score}}</p>
+        <a class="is-inline list">{{title}}</a>
+        <p class="is-inline is-right-list list">{{bark_score}}</p>
     </li>
             {{/each_upto}}
     </ul>
@@ -58,7 +58,7 @@
 
 <section class="session scrolling-wrapper">
   <div class="container">
-      <h3 class="title has-text-centered is-size-4">New Movies This Week </h3>
+      <h3 class="title has-text-centered is-size-4 popular-movies">New Movies This Week </h3>
         <div class="columns mt-5 is-8 is-multiline is-mobile">
             {{#each_upto movies 12 16}}
         <div class="column is-4-tablet is-3-desktop">
