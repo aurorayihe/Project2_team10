@@ -1,8 +1,5 @@
-<h1 class="welcome-profile">Welcome "name"!</h1>
-
-      <h3 class="reviews-history">Reviews History </h3>
-      
-
+{{!-- <h1 class="welcome-profile">Welcome {{user.username}}</h1> --}}
+<h3 class="reviews-history">Reviews History </h3>
 {{!-- <div class="row mt-4">
 
   {{#if reviews.length}}
@@ -26,8 +23,8 @@
  <div class="tile is-ancestor has-text-centered">
         <div class="tile is-parent">
           <article class="tile is-child box">
-                <p><a href="/review/{{review.review_id}}">{{movie_id}}: {{score}}</a></p>
-                <p class="title is-size-5">{{title}}</p>
+                <p><a href="/review/{{review.review_id}}">{{review.movie_id}}: {{review.score}}</a></p>
+                <p class="title is-size-5">{{review.title}}</p>
                 <p class="control">
                     <button class="button is-danger" data-id="{{review.review_id}}">
                       Delete post
@@ -35,7 +32,7 @@
                   </p>
           </article>
         </div>
-      </div>
-      {{/each}}
-
-<script src="./js/profile.js"></script>
+  </div>
+{{/each}}
+{{!-- 
+<script src="./js/profile.js"></script> --}}
