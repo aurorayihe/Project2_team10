@@ -18,6 +18,10 @@ body{
     text-shadow: 3px 4px rgb(126, 85, 85);
 } 
 
+.bark-home{
+    text-align: center;
+}
+
 
 .option, .icon{
     color: white;
@@ -48,11 +52,26 @@ body{
 }
 
 .list{
-    color:rgb(190, 240, 240);
+    background-color: aliceblue;
+    margin-bottom: 25px;
+    border-radius: 25px;
 }
 
 .signin{
    margin-top: 40px;
+}
+
+.login-form,
+.signup-form{
+    color: rgb(57, 107, 155);
+    font-weight: bold;
+    font-size: 30px;
+    width: 150px;
+    height: 40px;
+ background-color: aliceblue;
+ border-radius: 10px;
+ box-shadow: 3px 3px 4px rgb(3, 44, 78);
+ margin-left: 45%;
 }
 
 .is-fullhd{
@@ -69,18 +88,23 @@ body{
     font-size: 40px;
     text-align: center;
     font-weight: bold;
-    color: rgb(126, 85, 85);
+    color: rgb(65, 119, 146);
     text-shadow: 2px 3px  rgb(246, 208, 208);
+    background-color: aliceblue;
 }
 
 .reviews-history{
     font-size: 25px;
     text-align: center;
     margin-top: 30px;
-    color: rgb(106, 40, 40);
+    color: rgb(57, 107, 155);
     margin-bottom: 30px;
-  
-
+ font-weight: bold;
+ width: 200px;
+ background-color: aliceblue;
+ border-radius: 10px;
+ box-shadow: 3px 3px 4px rgb(3, 44, 78);
+ margin-left: 45%;
 }
 
 .right{
@@ -101,3 +125,46 @@ ion-icon{
     text-shadow: 2px 2px rgb(3, 44, 78);
     font-size: 25px;
 }
+
+.image-review{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.review-info{
+    font-size: 20px;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#new-review{
+    text-align: center;
+}
+
+.review-card{
+    background-color: aliceblue;
+}
+
+.img-mid{
+    margin-top: 25px;
+}
+
+.text-mid{
+    margin-top: 20px;
+}
+
+.review-text{
+    font-size: 19px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.review-bark{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.box-custom{
+    background-color: aliceblue;
+}
+
