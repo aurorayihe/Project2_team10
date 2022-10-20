@@ -7,44 +7,10 @@
   <div class="card-image has-text-centered px-6 image-space image-review">
                     <img src="./images/{{movie.filename}}" alt="">
                 </div>
-  <p class="review-info"> {{{get_icon movie.bark_score}}} </p>
+  <p class="review-info"> {{{get_icon movie.bark_score}}} {{movie.bark_score}}%</p>
   <p class="review-info">Director: {{movie.director}}</p>
   <p class="review-info">Cast: {{ movie.cast }}</p>
   <div id="movieID" value="{{movie.movie_id}}"></div>
-  {{!-- <div class="field">
-    <p class="control">
-      <textarea class="textarea" placeholder="Add a review..." id="comment"></textarea>
-    </p>
-  </div>
-  <div class="field">
-    <p class="control">
-      <textarea class="textarea" placeholder="bark score" id="score"></textarea>
-    </p>
-  </div>
-  <nav class="level">
-    <div class="level-center">
-      <div class="level-item ">
-        <button class="button is-info" id="new_review">Post Review</button>
-      </div>
-    </div>
-  </nav>
-</div>
-  {{#each reviews as |review| }}
-    <div class="row mb-4">
-    <div class="col-md-5">
-        <h2>
-        Bark Score: {{review.bark_score}}
-        {{{get_icon review.bark_score }}} 
-        </h2>
-        <p>
-        {{review.comment}}
-        </p>
-    </div>
-    </div>
-  {{/each}}
-</div>
-  </div>
-</div> --}}
 
 {{#each reviews as |review|}}
 <article class="media review-card">
@@ -54,7 +20,7 @@
     </p>
   </figure>
     <div class="content text-mid">
-      <p class="review-bark">Bark Score: {{{get_icon review.bark_score}}}</p>
+      <p class="review-bark">Bark Score: {{{get_icon review.score}}} {{review.score}}%</p>
       <p class="review-text">
         {{review.comment}}
       </p>
@@ -72,8 +38,8 @@
   </figure>
   <div class="media-content">
     <div class="field">
-      <input type="hidden" name="movie-id" value="{{movie_id}}" />
-
+      {{!-- <input type="hidden" name="user-id" value="{{user_id}}"/> --}}
+      <input type="hidden" name="movie-id" value="{{movie.movie_id}}"/>
       <p class="control">
         <textarea class="textarea" placeholder="Add a comment..." id="comment" name="comment"></textarea>
       </p>
