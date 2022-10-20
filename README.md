@@ -127,7 +127,7 @@ email: 'gus@hotmail.com',
 ```
 
 ## Heroku 💻
-
+https://pacific-brook-50244.herokuapp.com
 
 
 ## The Result 🏆
@@ -141,6 +141,6 @@ After connecting all files, we were able to have a working page with movies so u
 [Daisy Lien](https://github.com/quynhlien2002)
 
 ## Submission 📬
-
+[GitHub Repo](https://github.com/aurorayihe/Project2_team10)
 
 
