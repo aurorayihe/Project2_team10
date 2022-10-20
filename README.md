@@ -1,5 +1,5 @@
 # Project2_team10
-Project #2 - Maddy Doggy 🐶
+Maddy Doggy 🐶
 
 ## The Challenge 🔐
 Our users want to creat an application include node.js, handlebars and MVC to create a full-stack application. Our application must use MVC and handlebars. 
@@ -142,5 +142,8 @@ After connecting all files, we were able to have a working page with movies so u
 
 ## Submission 📬
 [GitHub Repo](https://github.com/aurorayihe/Project2_team10)
+
+
+
 
 
