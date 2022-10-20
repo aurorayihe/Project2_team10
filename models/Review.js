@@ -27,6 +27,10 @@ Review.init(
         key: 'movie_id'
       }
     },
+    // movie_title: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
     comment: {
       type: DataTypes.STRING,
       allowNull: false,
