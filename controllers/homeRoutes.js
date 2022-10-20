@@ -28,6 +28,7 @@ router.get('/', withAuth, async (req, res) => {
 
 
 router.get('/movie/:id', async (req, res) => {
+  console.log(req.session.user_id);
   try {
     const movieData = await Movie.findByPk(req.params.id);
     const movie = movieData.get({ plain: true });
@@ -36,6 +37,13 @@ router.get('/movie/:id', async (req, res) => {
         movie_id: req.params.id
       },
     });
+
+    // const userData = await User.findAll({
+    //   where:{
+    //     user_id: req.session.user_id
+    //   },
+    // });
+    // const user = userData.map((ref) => ref.get({ plain: true }));
     const reviews = reviewData.map((ref) => ref.get({ plain: true }));
     
     req.session.save(() => {

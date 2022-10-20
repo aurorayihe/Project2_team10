@@ -56,7 +56,8 @@ router.post('/', withAuth, async (req, res) => {
             ...req.body,
             comment: req.body.comment,
             score: req.body.score,
-            user_id: req.session.user_id,
+            user_id: req.body.user_id,
+            movie_id: req.body.movie_id,
         });  
         res.status(200).json(newReview);
     } catch (err) {
@@ -68,7 +69,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     try{
         const reviewData = await Review.destroy({
             where: {
-                id: req.params.id,
+                review_id: req.params.id,
                 user_id: req.session.user_id,
             }
         });
