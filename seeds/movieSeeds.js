@@ -110,7 +110,13 @@ const movieData = [
          bark_score: 82,
          filename: 'avatar.jpeg',
       },
-      
+      {
+        title: 'La La Land',
+         director:'Damien Chazelle',
+         cast:'Ryan Gosling, Emma Stone, John Legend',
+         bark_score: 81,
+         filename: 'la-la-land.jpeg',
+      }
 ];
 
 const seedMovies = () => Movie.bulkCreate(movieData);

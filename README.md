@@ -1,45 +1,64 @@
 # Project2_team10
-Project #2 - Maddy Doggy
+Project #2 - Maddy Doggy 🐶
 
-## The Challenge 
+## The Challenge 🔐
 Our users want to creat an application include node.js, handlebars and MVC to create a full-stack application. Our application must use MVC and handlebars. 
 
-![](./)
+![](./public/images/homepage.png)
 
 
-## The Concept 
+## The Concept 🔑
 We want to create a site that show the list of different movies and their rating base on bark score and user can log in to leave a review for their movie. We are using Bulma to use as a CSS Bootstrap for this application. 
 
-## User Story 
+## User Story 📃
 
 ```
+AS a user,
+I WANT to have a movie review website,
+SO THAT I can choose a movie to watch and review it after
 ```
 
-## The Logic 
+## The Logic 🔍
 
 ```
-GIVEN that I want to choose a movie to watch and leave a review after
-WHEN I open the web page
-THEN I am present with a homepage include Popular Movies, Popular In Netflix, and Popular in Theatres with different types of movie according to it
-WHEN I click a Movies button in the nav bars
-THEN I am navigate to a page with a list of all movies with director's name, bark score and a poster
-WHEN I click Log In in the nav bar
-THEN I am navigate to a page to put username and password to sign in
-WHEN I don't have an account yet
-THEN I can click the Create An Account to lead me to the Sign Up page
-WHEN I am in the sign up page
-THEN I can put my username, email, and password to create a new account
-WHEN I finish create a new account
-THEN I am leading to a homepage with a Profile and Log Out added in the navigation bars
-WHEN I click into any of the movie
-THEN I can see a poster, name of the movie, cast, and director and also a text box for me to review the movie
-WHEN I click the Profile button
-THEN I am leading to a page with the list of movies I had review before
-WHEN I click Log Out
-THEN I am a log out of my account and lead to original homepage
+GIVEN a amateur movie review website,
+WHEN I visit the site for the first time
+THEN   I   am   presented   with   the   homepage,   which   includes   some   movies,   ranking,
+trending; navigation links for the Movies and the option to log in
+WHEN I click on the login option
+THEN I am taken to the login page
+WHEN I choose to create an account instead
+THEN I am redirected to the sign up page and prompted to enter my username and
+password
+WHEN I am signed in to the site
+THEN I am taken back to the homepage, where the navigation shows Movies and the
+option to log out
+WHEN I click on the movie option
+THEN I am taken to the all movies page, where I can see the title and bark score of
+every movie
+WHEN I click a movie title
+THEN I am taken to the movie page (movie.handlebars) of that specific movie, where
+I can see the title, director, cast, barkscore, a button to add new movie (if logged in)
+and the comment of this movie
+WHEN I click the add movie button
+THEN I am taken to the add review page (review.handlebars), where I can see the
+general information of this movie on the top, and the text area to add my comment on
+the bottom
+WHEN I click the add review button
+THEN I am taken to the movie page (direct to my new review if that’s feasible)
+WHEN I click the profile button
+THEN I am taken to the profile page (profile.handlebars), where I can see the movie
+title, the barkscore I gave for that movie, and a delete button
+WHEN I click the movie name
+THEN I am taken to that movie’s page
+WHEN I click the delete button
+THEN that individual review is deleted from both my profile and the movie review
+page
+WHEN I click logout
+THEN I am logged out and taken back to the homepage
 ```
 
-## The Process
+## The Process 📝
 To sastify our user's needs, we created: 
 - An HTML file that import Bulma, CSS File, Google Font, JavaScript and Font Awesome
 - Created seeds to store all of the movies's information
@@ -107,17 +126,21 @@ email: 'gus@hotmail.com',
 
 ```
 
-## Heroku 
+## Heroku 💻
 
-## The Result 
+
+
+## The Result 🏆
 After connecting all files, we were able to have a working page with movies so user can choose a movie to watch in a movie's night and can leave a review after finishing watching
 
-## The Collaborators
+## The Collaborators 👩🏻‍💻 🧑🏻‍💻 👩🏻‍💻
 [Jenny Wang](https://github.com/aurorayihe)
+
 [Gassan Bundakji](https://github.com/gbundakji)
+
 [Daisy Lien](https://github.com/quynhlien2002)
 
-## Submission 
+## Submission 📬
 
 
 

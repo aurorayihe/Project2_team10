@@ -47,6 +47,7 @@ router.get('/movie/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 // router.get('/movie/:id'), async (req, res) => {
 //   try {
 //     const movieData = await Movie.findByPk(req.params.id);
@@ -58,17 +59,18 @@ router.get('/movie/:id', async (req, res) => {
 //   }
 // };
 
-router.get('/review/:id', async (req, res) => {
-  try {
-    const reviewData = await Review.findByPk(req.params.id);
 
-    const review = reviewData.get({ plain: true });
-    res.render('review', { review, logged_in: req.session.logged_in });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+// router.get('/review/:id', async (req, res) => {
+//   try {
+//     const reviewData = await Review.findByPk(req.params.id);
+
+//     const review = reviewData.get({ plain: true });
+//     res.render('review', { review, logged_in: req.session.logged_in });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 router.get('/profile', withAuth, async (req, res) => {
   try {
@@ -142,6 +144,7 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/signup', (req, res) => {
+  
   res.render('signup');
 });
   

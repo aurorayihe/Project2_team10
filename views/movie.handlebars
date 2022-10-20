@@ -1,11 +1,17 @@
-<div class="text-center">
+<div class="card">
+  <div class="card-content">
+<div class="content">
+<div class="text-center has-text-centered">
   <h2>{{movie.title}}</h2>
-  <img src="./images/{{movie.filename}}" alt="">
-  <p>Bark Score: {{movie.bark_score}} {{{get_icon movie.bark_score}}}</p>
-  <p>Director: {{movie.director}}</p>
-  <p>Cast: {{ movie.cast }}</p>
+  {{!-- <img src="./images/{{movie.filename}}" alt=""> --}}
+  <div class="card-image has-text-centered px-6 image-space image-review">
+                    <img src="./images/{{movie.filename}}" alt="">
+                </div>
+  <p class="review-info"> {{{get_icon movie.bark_score}}} </p>
+  <p class="review-info">Director: {{movie.director}}</p>
+  <p class="review-info">Cast: {{ movie.cast }}</p>
   <div id="movieID" value="{{movie.movie_id}}"></div>
-  <div class="field">
+  {{!-- <div class="field">
     <p class="control">
       <textarea class="textarea" placeholder="Add a review..." id="comment"></textarea>
     </p>
@@ -16,8 +22,8 @@
     </p>
   </div>
   <nav class="level">
-    <div class="level-left">
-      <div class="level-item">
+    <div class="level-center">
+      <div class="level-item ">
         <button class="button is-info" id="new_review">Post Review</button>
       </div>
     </div>
@@ -37,5 +43,54 @@
     </div>
   {{/each}}
 </div>
+  </div>
+</div> --}}
+
+{{#each reviews as |review|}}
+<article class="media review-card">
+  <figure class="media-left img-mid">
+    <p class="image is-64x64">
+      <img src="/images/dog-avatar.webp">
+    </p>
+  </figure>
+    <div class="content text-mid">
+      <p class="review-bark">Bark Score: {{{get_icon review.bark_score}}}</p>
+      <p class="review-text">
+        {{review.comment}}
+      </p>
+    </div>
+</article>
+{{/each}}
+  
+  
+<section>
+<article class="media">
+  <figure class="media-left">
+    <p class="image is-64x64">
+      <img src="/images/dog-avatar-2.webp">
+    </p>
+  </figure>
+  <div class="media-content">
+    <div class="field">
+      <input type="hidden" name="movie-id" value="{{movie_id}}" />
+
+      <p class="control">
+        <textarea class="textarea" placeholder="Add a comment..." id="comment" name="comment"></textarea>
+      </p>
+    </div>
+    <div class="field">
+    <p class="control">
+      <textarea class="textarea" placeholder="bark score" id="score" name="score"></textarea>
+    </p>
+  </div>
+    <div class="field">
+      <p class="control">
+        <button class="button" id="new_review">Post comment</button>
+      </p>
+    </div>
+  </div>
+</article>
+</section>
+
 
 <script src="./js/movie.js"></script>
